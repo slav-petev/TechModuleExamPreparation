@@ -13,9 +13,13 @@ namespace Preparation.Pokemon
             int targetsPoked = 0;
             int changingPokePower = pokePower;
             int halfPokePower = pokePower / 2;
+
+            //We can't divide by zero per definition and if we divide by 1, we won't change the value at all,
+            //thus creating an infinite loop
+            bool canDivideByExhaustionFactor = exhaustionFactor > 1;
             while (changingPokePower >= pokeTargetDistance)
             {
-                if (changingPokePower == halfPokePower && exhaustionFactor > 1)
+                if (changingPokePower == halfPokePower && canDivideByExhaustionFactor)
                 {
                     changingPokePower /= exhaustionFactor;
                 }
