@@ -6,16 +6,16 @@ namespace Preparation.Pokemon
     {
         public static void Main()
         {
-            uint pokePower = uint.Parse(Console.ReadLine());
-            uint pokeTargetDistance = uint.Parse(Console.ReadLine());
-            byte exhaustionFactor = byte.Parse(Console.ReadLine());
+            int pokePower = int.Parse(Console.ReadLine());
+            int pokeTargetDistance = int.Parse(Console.ReadLine());
+            int exhaustionFactor = int.Parse(Console.ReadLine());
 
-            uint targetsPoked = 0;
-            uint changingPokePower = pokePower;
-            uint halfPokePower = pokePower / 2;
+            int targetsPoked = 0;
+            int changingPokePower = pokePower;
+            int halfPokePower = pokePower / 2;
             while (changingPokePower >= pokeTargetDistance)
             {
-                if (changingPokePower == halfPokePower && exhaustionFactor != 0)
+                if (changingPokePower == halfPokePower && exhaustionFactor > 1)
                 {
                     changingPokePower /= exhaustionFactor;
                 }
